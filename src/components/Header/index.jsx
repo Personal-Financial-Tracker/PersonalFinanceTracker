@@ -4,12 +4,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase";
 import userSvg from "../../assets/user.svg";
+import { toast } from "react-toastify";
 function Header() {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
   function logout() {
     auth.signOut();
     navigate("/");
+    toast.success("Logged out successfully!");
   }
 
   useEffect(() => {

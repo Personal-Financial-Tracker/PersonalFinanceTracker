@@ -60,7 +60,7 @@ const SignUpSignIn = () => {
       await createUserDocument(user);
       toast.success("Successfully Signed Up!");
       setLoading(false);
-      navigate("/dashboard");
+      // navigate("/dashboard");
     } catch (error) {
       toast.error(error.message);
       console.error(
@@ -77,7 +77,7 @@ const SignUpSignIn = () => {
     try {
       const result = await signInWithEmailAndPassword(auth, email, password);
       const user = result.user;
-      navigate("/dashboard");
+      // navigate("/dashboard");
       toast.success("Logged In Successfully!");
       setLoading(false);
     } catch (error) {
@@ -98,7 +98,7 @@ const SignUpSignIn = () => {
       await createUserDocument(user);
       toast.success("User Authenticated Successfully!");
       setLoading(false);
-      navigate("/dashboard");
+      // navigate("/dashboard");
     } catch (error) {
       setLoading(false);
       toast.error(error.message);
