@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card, Row } from "antd";
-import { Line, Pie } from "@ant-design/charts";
+// import { Line, Pie } from "@ant-design/charts";
+import { Line,Pie } from '@ant-design/plots';
 import moment from "moment";
 import TransactionSearch from "./TransactionSearch";
 import Header from "./Header";
@@ -115,7 +116,7 @@ const Dashboard = () => {
   const onFinish = (values, type) => {
     const newTransaction = {
       type: type,
-      date: moment(values.date).format("YYYY-MM-DD"),
+      date: values.date.format("YYYY-MM-DD"),
       amount: parseFloat(values.amount),
       tag: values.tag,
       name: values.name,
